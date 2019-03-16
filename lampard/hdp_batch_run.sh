@@ -1,7 +1,7 @@
 #!/bin/bash
 
-SERVERS="172.22.213.85 172.22.214.51 172.22.214.89 172.22.214.97"
-PASSWORD=b797d49bfd67f4968d8c4f097c87b33b
+SERVERS="172.22.213.* *.*.*.* "
+PASSWORD=
 
 # 免密码登陆函数
 auto_ssh_copy_id() {
