@@ -3,8 +3,8 @@
 title: 第八章-Goroutines-和Channels
 date: 2019-02-19 14:21:37
 categories:
-- 提升
-- 语言
+- [提升,语言]
+- [提升,读书]
 tags: 
 - golang
 ---
