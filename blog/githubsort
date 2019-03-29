@@ -1,0 +1,65 @@
+/**
+ * Definition for a singly-linked list.
+ * class ListNode {
+ *     public $val = 0;
+ *     public $next = null;
+ *     function __construct($val) { $this->val = $val; }
+ * }
+ */
+class Solution {
+
+    /**
+     * @param ListNode $l1
+     * @param ListNode $l2
+     * @return ListNode
+     */
+    
+    function addTwoNumbers($l1, $l2) {
+        
+        $result = array();
+        $pre_node = new ListNode(0);
+        $this_node = new ListNode(0);
+        while(true){
+            if($l1->val == null&&$l2->val == null){
+                break;
+            }elseif($l1->val == null){
+                $tmp =$l2->val;
+                $l2=$l2->next;
+            }elseif($l2->val == null){
+                $tmp =$l1->val;
+                $l1 = $l1->next;
+            }else{
+                $tmp = $l1->val +$l2->val;
+                 $l1 = $l1->next;
+                 $l2=$l2->next;
+            }
+            $merge=0;
+            if($tmp >=10){
+                      $merge= $tmp-10;
+            }else{
+                      $merge= $tmp;
+            }
+            
+            if($pre_node->val == null){
+                $pre_node->val = $merge+$flag;
+                $pre_node->next = $this_node;
+                $head_node = $pre_node;
+                
+            }else{
+                $this_node->val = $merge+$flag;
+                $pre_node->next = $this_node;
+                $pre_node = $this_node;
+            }
+            
+            if($tmp >=10){
+                $flag = 1;
+            }else{
+                $flag = 0;
+            }
+           
+        }
+         
+         return $head_node;
+        
+    }
+}
